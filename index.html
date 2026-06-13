@@ -3,242 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>건강안전분과 브리핑 - 마음휴게소</title>
+    <title>정책제안서 자료 수집 방법 - 고양시</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800;900&display=swap');
-        
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         body {
             font-family: 'Pretendard', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
             scroll-behavior: smooth;
         }
-
-        .section-full {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 2rem;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-
-        .floating {
-            animation: floating 3s ease-in-out infinite;
+        .nav-link.active {
+            color: #2563eb;
+            font-weight: 700;
+            border-bottom: 2px solid #2563eb;
         }
-
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .hide { display: none; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 scrollbar-hide">
+<body class="antialiased">
 
-    <!-- Navigation Fixed -->
-    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-white/70 backdrop-blur-md border-b border-gray-100">
-        <span class="font-black text-xl tracking-tighter text-teal-600">건강안전분과</span>
-        <div class="hidden md:flex gap-8 font-bold text-sm text-gray-500">
-            <a href="#hero" class="hover:text-teal-600 transition-colors">INTRO</a>
-            <a href="#background" class="hover:text-teal-600 transition-colors">BACKGROUND</a>
-            <a href="#solution" class="hover:text-teal-600 transition-colors">SOLUTION</a>
-            <a href="#effects" class="hover:text-teal-600 transition-colors">EFFECTS</a>
-        </div>
-        <div class="bg-teal-600 text-white px-4 py-1.5 rounded-full text-xs font-bold">
-            정책 제안 브리핑
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16 overflow-x-auto whitespace-nowrap hide-scrollbar">
+                <a href="#intro" class="text-xl font-bold text-blue-600 mr-6 shrink-0"><i class="fa-solid fa-book-open-reader mr-2"></i>자료수집 교육</a>
+                <div class="flex space-x-4">
+                    <a href="#ch1" class="text-gray-600 hover:text-blue-600 px-2 py-4 text-sm font-medium transition-colors">1. 중요성</a>
+                    <a href="#ch2" class="text-gray-600 hover:text-blue-600 px-2 py-4 text-sm font-medium transition-colors">2. 자료원</a>
+                    <a href="#ch3" class="text-gray-600 hover:text-blue-600 px-2 py-4 text-sm font-medium transition-colors">3. AI활용</a>
+                    <a href="#ch4" class="text-gray-600 hover:text-blue-600 px-2 py-4 text-sm font-medium transition-colors">4. 실습</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- 1. Hero Section -->
-    <section id="hero" class="section-full relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-blue-50">
-        <div class="max-w-6xl mx-auto w-full text-center md:text-left grid md:grid-cols-2 items-center gap-12">
-            <div class="z-10 order-2 md:order-1">
-                <h2 class="text-teal-600 font-bold mb-4 tracking-widest uppercase">경기도 청소년 지원 정책</h2>
-                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 break-keep">
-                    정서·공감 플랫폼<br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-500">'마음휴게소'</span> 제안
-                </h1>
-                <p class="text-xl text-gray-600 font-medium mb-10 max-w-lg mx-auto md:mx-0 break-keep">
-                    위기 이전 단계에서 가볍게 감정을 기록하고 공감하며, 청소년의 정서적 연결감을 회복하는 예방형 공간입니다.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#background" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 text-center">
-                        제안 배경 확인하기
-                    </a>
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+        
+        <!-- Intro Section -->
+        <section id="intro" class="glass-card rounded-3xl p-8 text-center animate-fade-in-up">
+            <div class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold mb-4">
+                경기도청소년동행멘토단 고양시 청소년참여위원회 교육
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+                사소한 문제가 <br class="md:hidden" /><span class="text-blue-600">우리의 정책으로!</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 font-medium">정책 제안서 자료 수집 방법 완벽 가이드</p>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 bg-gray-50 p-6 rounded-2xl">
+                <div class="w-24 h-24 bg-gray-300 rounded-full overflow-hidden shrink-0 flex items-center justify-center text-gray-500 text-xs text-center">
+                                    </div>
+                <div class="text-left">
+                    <h3 class="font-bold text-xl mb-2">강사 심재정</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• 경기도 청소년활동진흥센터 동행멘토단 강사 (2024~現)</li>
+                        <li>• 제5기 양주시청년정책위원회 공동위원장 (2026~現)</li>
+                        <li>• 제5기 경기청년참여기구 청년위원 (2025~現)</li>
+                    </ul>
                 </div>
             </div>
-            <div class="order-1 md:order-2 flex justify-center">
-                <div class="relative w-64 h-64 md:w-96 md:h-96 floating">
-                    <div class="absolute inset-0 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-                    <div class="absolute inset-0 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" style="left: 40px; top: 40px;"></div>
-                    <div class="relative flex items-center justify-center h-full text-8xl md:text-9xl">
-                        ☕
-                    </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="glass-card rounded-3xl p-6 md:p-8 bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg">
+            <div class="flex items-center mb-6">
+                <i class="fa-solid fa-lightbulb text-yellow-300 text-3xl mr-4"></i>
+                <h2 class="text-2xl font-bold">워밍업 퀴즈 타임!</h2>
+            </div>
+            <div id="quiz-container" class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                <p class="text-xl mb-6 font-medium">Q. 고양시 청소년 정책 담당 부서는 어디일까요?</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="quiz-options">
+                    <button onclick="checkAnswer(1)" class="bg-white text-blue-900 py-3 px-4 rounded-xl font-bold hover:bg-blue-50 transition shadow-sm">1. 사회복지국 여성가족과</button>
+                    <button onclick="checkAnswer(2)" class="bg-white text-blue-900 py-3 px-4 rounded-xl font-bold hover:bg-blue-50 transition shadow-sm">2. 사회복지국 아동보육과</button>
+                    <button onclick="checkAnswer(3)" class="bg-white text-blue-900 py-3 px-4 rounded-xl font-bold hover:bg-blue-50 transition shadow-sm">3. 기획조정실 법무담당관</button>
+                </div>
+                <div id="quiz-result" class="hidden mt-6 text-center bg-white text-blue-900 p-4 rounded-xl animate-bounce">
+                    <span class="text-2xl font-black block mb-2">정답: 1번! 🎉</span>
+                    <p class="text-gray-700"><strong>사회복지국 여성가족과 청소년팀</strong>에서 업무를 총괄합니다.<br><span class="text-sm">(📞 031-8075-2285 | 충헌빌딩)</span></p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 2. Background Section -->
-    <section id="background" class="section-full bg-white">
-        <div class="max-w-5xl mx-auto w-full px-6">
-            <div class="mb-16">
-                <span class="text-orange-500 font-black text-sm tracking-widest uppercase">Section 01. Background</span>
-                <h2 class="text-4xl md:text-5xl font-black mt-2">왜 마음휴게소가 필요할까요?</h2>
+        <!-- Chapter 1: Importance -->
+        <section id="ch1" class="scroll-mt-24">
+            <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="bg-blue-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center mr-3 text-sm">1</span> 자료 수집, 왜 중요할까?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-red-500">
+                    <div class="text-red-500 mb-2"><i class="fa-solid fa-triangle-exclamation text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-2">중복의 위기 방지</h3>
+                    <p class="text-gray-600 text-sm">아무리 참신한 아이디어라도 이미 시행 중이거나 타 부서에서 집행 중인 정책이라면 채택되지 않습니다. 수고의 낭비를 막기 위해 조사는 필수입니다.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-green-500">
+                    <div class="text-green-500 mb-2"><i class="fa-solid fa-magnifying-glass-chart text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-2">차별화된 방안 제시</h3>
+                    <p class="text-gray-600 text-sm">이미 시행 중인 정책이라도 청소년이 체감하지 못한다면? 그 '원인'을 분석하고 기존 정책과 '차별화'된 개선 방안을 제시해야 합니다.</p>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-orange-50 p-10 rounded-[2.5rem] border border-orange-100 flex flex-col justify-center">
-                    <p class="text-xl font-bold text-orange-900 leading-snug mb-4">
-                        청소년 5명 중 1명 이상이<br/>우울감을 경험합니다.
-                    </p>
-                    <div class="flex gap-4 mt-4">
-                        <div class="bg-white p-4 rounded-2xl flex-1 text-center border border-orange-100 shadow-sm">
-                            <p class="text-sm text-gray-500 font-bold mb-1">남학생</p>
-                            <p class="text-3xl font-black text-orange-600">21.7%</p>
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="bg-gray-50 px-6 py-4 border-b font-bold text-gray-700">1차 자료 vs 2차 자료</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-600">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="p-4 w-1/4">구분</th>
+                                <th class="p-4 w-3/8">1차 자료 (Primary Data)</th>
+                                <th class="p-4 w-3/8">2차 자료 (Secondary Data)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-4 font-bold bg-gray-50">정의</td>
+                                <td class="p-4">연구자가 직접 수집한 원본 자료</td>
+                                <td class="p-4">1차 자료를 원본으로 타인이 새롭게 수집·가공한 자료</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4 font-bold bg-gray-50">예시</td>
+                                <td class="p-4">설문조사 결과, 인터뷰, 현장 관찰 기록 등</td>
+                                <td class="p-4">연구 논문, 정부 자료집, 뉴스 기사 등</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold bg-gray-50">특징</td>
+                                <td class="p-4"><span class="text-blue-600 font-bold">장점:</span> 높은 신뢰성, 최신성<br><span class="text-red-500 font-bold">단점:</span> 높은 시간/비용 소요</td>
+                                <td class="p-4"><span class="text-blue-600 font-bold">장점:</span> 접근성 용이, 시간 단축<br><span class="text-red-500 font-bold">단점:</span> 정보의 불확실성 증대</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Sources -->
+        <section id="ch2" class="scroll-mt-24">
+            <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="bg-blue-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center mr-3 text-sm">2</span> 자료는 어디서 찾을까?</h2>
+            
+            <p class="text-gray-700 mb-6 font-medium">사회 정책 참여 4단계: <span class="text-blue-600">2단계를 정확히 하면 3단계가 쉬워져요!</span></p>
+            <div class="flex overflow-x-auto space-x-4 pb-4 mb-8 hide-scrollbar snap-x">
+                <div class="shrink-0 w-48 bg-white border rounded-xl p-4 snap-center relative">
+                    <div class="text-3xl text-gray-300 font-black absolute top-2 right-4 opacity-50">1</div>
+                    <h4 class="font-bold mb-2">문제점 찾기</h4>
+                    <p class="text-xs text-gray-500">지역사회 문제점 발견 및 원인 분석</p>
+                </div>
+                <div class="shrink-0 w-48 bg-blue-50 border border-blue-200 rounded-xl p-4 snap-center relative shadow-md transform scale-105">
+                    <div class="text-3xl text-blue-200 font-black absolute top-2 right-4">2</div>
+                    <h4 class="font-bold text-blue-800 mb-2">기시행 정책조사</h4>
+                    <p class="text-xs text-blue-600">현행 정책 파악 및 장단점 분석 (핵심!)</p>
+                </div>
+                <div class="shrink-0 w-48 bg-white border rounded-xl p-4 snap-center relative">
+                    <div class="text-3xl text-gray-300 font-black absolute top-2 right-4 opacity-50">3</div>
+                    <h4 class="font-bold mb-2">정책 만들기</h4>
+                    <p class="text-xs text-gray-500">정책 개발 및 실현 가능성 검토</p>
+                </div>
+                <div class="shrink-0 w-48 bg-white border rounded-xl p-4 snap-center relative">
+                    <div class="text-3xl text-gray-300 font-black absolute top-2 right-4 opacity-50">4</div>
+                    <h4 class="font-bold mb-2">실행 계획 세우기</h4>
+                    <p class="text-xs text-gray-500">수용을 위한 다양한 실천 방법 모색</p>
+                </div>
+            </div>
+
+            <!-- Interactive Source Links -->
+            <div class="space-y-4">
+                <!-- Law -->
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mr-4"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div>
+                            <h3 class="font-bold text-lg">법령 & 조례</h3>
+                            <p class="text-sm text-gray-500">하위 법령은 상위 법령을 어길 수 없습니다.</p>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl flex-1 text-center border border-orange-100 shadow-sm">
-                            <p class="text-sm text-gray-500 font-bold mb-1">여학생</p>
-                            <p class="text-3xl font-black text-orange-600">29.9%</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <a href="https://www.law.go.kr/" target="_blank" class="flex items-center justify-between p-3 border rounded-xl hover:bg-gray-50 transition">
+                            <span class="font-medium text-sm">국가법령정보센터 <br><span class="text-xs text-gray-500">청소년기본법, 보호법 확인</span></span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-gray-400"></i>
+                        </a>
+                        <a href="https://www.elis.go.kr/" target="_blank" class="flex items-center justify-between p-3 border rounded-xl hover:bg-gray-50 transition">
+                            <span class="font-medium text-sm">자치법규정보시스템 <br><span class="text-xs text-gray-500">전국 시도/시군구 조례 확인</span></span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Admin -->
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mr-4"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <h3 class="font-bold text-lg">행정기관 자료</h3>
+                            <p class="text-sm text-gray-500">주무 부처의 기본계획 및 사업 안내 확인</p>
                         </div>
                     </div>
-                    <p class="text-xs text-orange-400 mt-3 text-center">* 2025년 청소년건강행태조사 최근 1년간 우울감 경험 비율</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <a href="https://www.mogef.go.kr/" target="_blank" class="flex items-center justify-between p-3 border rounded-xl hover:bg-emerald-50 transition">
+                            <span class="font-medium text-sm">여성가족부 <br><span class="text-xs text-gray-500">25년 하반기 '성평등가족부' 변경예정</span></span>
+                            <i class="fa-solid fa-chevron-right text-gray-400"></i>
+                        </a>
+                        <a href="https://www.gg.go.kr/" target="_blank" class="flex items-center justify-between p-3 border rounded-xl hover:bg-emerald-50 transition">
+                            <span class="font-medium text-sm">경기도청 <br><span class="text-xs text-gray-500">미래평생교육국 청소년과</span></span>
+                            <i class="fa-solid fa-chevron-right text-gray-400"></i>
+                        </a>
+                        <a href="https://www.goyang.go.kr/" target="_blank" class="flex items-center justify-between p-3 border rounded-xl hover:bg-emerald-50 transition">
+                            <span class="font-medium text-sm">고양시청 <br><span class="text-xs text-gray-500">사회복지국 여성가족과 청소년팀</span></span>
+                            <i class="fa-solid fa-chevron-right text-gray-400"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="flex flex-col gap-6">
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100">
-                        <div class="flex items-center gap-4 mb-3">
-                            <i class="fa-solid fa-triangle-exclamation text-2xl text-rose-500"></i>
-                            <h3 class="font-bold text-gray-800 text-lg">기존 시스템의 한계</h3>
+
+                <!-- News & Research -->
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xl mr-4"><i class="fa-solid fa-newspaper"></i></div>
+                        <div>
+                            <h3 class="font-bold text-lg">기사, 학술논문, 연구기관</h3>
+                            <p class="text-sm text-gray-500">최신 이슈 파악 및 전문적 이론 기반 다지기</p>
                         </div>
-                        <p class="text-gray-600 leading-relaxed break-keep">
-                            현재 경기도 e-청소년안전망 '채움'은 상담·복지 연계 체계로 운영되고 있어, <strong>위기 수준에 이르기 전 단계의 예방형 정서 지원 기능</strong>은 부족합니다.
-                        </p>
                     </div>
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100">
-                        <div class="flex items-center gap-4 mb-3">
-                            <i class="fa-solid fa-lightbulb text-2xl text-amber-500"></i>
-                            <h3 class="font-bold text-gray-800 text-lg">기존 인프라 활용 방안</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <a href="https://www.bigkinds.or.kr/" target="_blank" class="block p-3 border rounded-xl text-center hover:bg-orange-50 transition">
+                            <i class="fa-solid fa-chart-pie mb-2 text-xl text-orange-500"></i>
+                            <div class="font-medium text-sm">빅카인즈</div>
+                            <div class="text-xs text-gray-500">뉴스 빅데이터</div>
+                        </a>
+                        <a href="https://www.nypi.re.kr/" target="_blank" class="block p-3 border rounded-xl text-center hover:bg-orange-50 transition">
+                            <i class="fa-solid fa-flask mb-2 text-xl text-orange-500"></i>
+                            <div class="font-medium text-sm">NYPI</div>
+                            <div class="text-xs text-gray-500">한국청소년정책연구원</div>
+                        </a>
+                        <a href="https://www.riss.kr/" target="_blank" class="block p-3 border rounded-xl text-center hover:bg-orange-50 transition">
+                            <i class="fa-solid fa-graduation-cap mb-2 text-xl text-orange-500"></i>
+                            <div class="font-medium text-sm">RISS</div>
+                            <div class="text-xs text-gray-500">국내 학위 논문</div>
+                        </a>
+                        <a href="https://www.kci.go.kr/" target="_blank" class="block p-3 border rounded-xl text-center hover:bg-orange-50 transition">
+                            <i class="fa-solid fa-book-journal-whills mb-2 text-xl text-orange-500"></i>
+                            <div class="font-medium text-sm">KCI</div>
+                            <div class="text-xs text-gray-500">학술지 인용색인</div>
+                        </a>
+                    </div>
+                    <div class="mt-4 bg-yellow-50 border-l-4 border-yellow-400 p-3 text-sm text-yellow-800 rounded-r-lg">
+                        <i class="fa-solid fa-lightbulb mr-1"></i> <strong>논문 읽기 팁:</strong> 전체를 읽을 필요 없이 <strong>초록(Abstract)</strong>을 먼저 읽고 핵심 내용을 파악하세요!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2.5: AI Search -->
+        <section id="ch3" class="scroll-mt-24">
+            <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="bg-blue-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center mr-3 text-sm">3</span> 생성형 인공지능(AI) 활용</h2>
+            
+            <div class="glass-card rounded-2xl p-6 mb-6">
+                <h3 class="font-bold text-lg mb-4 text-center">AI 프롬프트 작성 6요소</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <div class="text-blue-600 font-black mb-1">1. 내 정보</div>
+                        <div class="text-xs text-gray-600">예: 정책을 제안하는 청소년</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <div class="text-blue-600 font-black mb-1">2. 역할(Role)</div>
+                        <div class="text-xs text-gray-600">예: 행정학 전공 대학생 수준</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <div class="text-blue-600 font-black mb-1">3. 맥락(Context)</div>
+                        <div class="text-xs text-gray-600">예: 정책 실효성 분석을 위해</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <div class="text-blue-600 font-black mb-1">4. 요청사항</div>
+                        <div class="text-xs text-gray-600">예: 최근 5년 흐름 정리해줘</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <div class="text-blue-600 font-black mb-1">5. 사용처</div>
+                        <div class="text-xs text-gray-600">예: 정책제안서 본문 삽입용</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <div class="text-blue-600 font-black mb-1">6. 활용방식</div>
+                        <div class="text-xs text-gray-600">예: 내용을 3줄로 요약해서 출력</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border-l-4 border-indigo-500">
+                <h3 class="font-bold text-lg mb-2">AI 자료 인용 표기법 (필수)</h3>
+                <p class="text-sm text-gray-600 mb-3">정보의 신뢰도를 높이기 위해 반드시 작성해야 합니다.</p>
+                <div class="bg-indigo-50 p-4 rounded-lg text-sm text-indigo-900 font-mono overflow-x-auto whitespace-pre-wrap">
+[작성 예시]
+2026.06.12. OpenAI사의 Chat GPT 4o 모델에 '청소년 환경 정책 우수 사례' 분석 자료를 요청하여 해당 자료를 활용해 작성함. (대화내역 링크)
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Practice -->
+        <section id="ch4" class="scroll-mt-24">
+            <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="bg-blue-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center mr-3 text-sm">4</span> 자료 조사 실습 (60분)</h2>
+            
+            <div class="space-y-4">
+                <!-- Practice 1 -->
+                <details class="group glass-card rounded-2xl [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg">
+                        <span>실습 1. 뉴스 기사 찾기 (빅카인즈)</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 border-t mt-2">
+                        <ol class="list-decimal pl-5 space-y-2 mt-4 text-sm">
+                            <li><strong>빅카인즈</strong> 접속 및 키워드 검색 (예: 고양시 청소년)</li>
+                            <li>기사 3~5개 분석: 제목, 핵심 내용, 우리 지역 적용 가능성 기록</li>
+                            <li>가장 유용한 기사 1개 선정하여 내용 공유하기</li>
+                        </ol>
+                        <a href="https://www.bigkinds.or.kr/" target="_blank" class="inline-block mt-4 bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-bold">빅카인즈 바로가기</a>
+                    </div>
+                </details>
+
+                <!-- Practice 2 -->
+                <details class="group glass-card rounded-2xl [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg">
+                        <span>실습 2. 행정기관 자료 찾기</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 border-t mt-2">
+                        <h4 class="font-bold text-black mt-4 mb-2">A. 2026년도 청소년사업 찾기</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-sm mb-4">
+                            <li>여성가족부(성평등가족부) 홈페이지 > 정책자료실 접속</li>
+                            <li>'2026년 청소년사업 안내' 다운로드 후 관심 분야 확인</li>
+                        </ul>
+                        <h4 class="font-bold text-black mb-2">B. 지자체 청소년 정책 찾기</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-sm">
+                            <li>고양시청 홈페이지 접속 > 주무 부서(여성가족과 청소년팀) 확인</li>
+                            <li>연간 업무 계획 다운로드 후 분석</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Practice 3 -->
+                <details class="group glass-card rounded-2xl [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg">
+                        <span>실습 3. AI 및 논문/법령 조사</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 border-t mt-2 text-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-gray-50 p-4 rounded-xl">
+                                <h4 class="font-bold text-blue-800 mb-2">법령 & 조례</h4>
+                                <p>국가법령정보센터에서 "청소년기본법" 검색. 자치법규시스템에서 "고양시 청소년" 검색 후 특화 조항 분석.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl">
+                                <h4 class="font-bold text-blue-800 mb-2">AI 프롬프트 작성</h4>
+                                <p>배운 6가지 요소를 활용하여 프롬프트를 작성하고 AI 답변의 출처를 직접 검증해보기.</p>
+                            </div>
                         </div>
-                        <p class="text-gray-600 leading-relaxed break-keep">
-                            새로운 플랫폼을 구축하는 대신, <strong>기존 '채움' 플랫폼 내에 커뮤니티(게시판) 기능을 추가</strong>하여 예방형 정서지원 기능을 보완합니다.
-                        </p>
                     </div>
-                </div>
+                </details>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3. Solution Section -->
-    <section id="solution" class="section-full bg-slate-50">
-        <div class="max-w-6xl mx-auto w-full px-6">
-            <div class="mb-12 text-center">
-                <span class="text-teal-600 font-black text-sm tracking-widest uppercase">Section 02. Solution</span>
-                <h2 class="text-4xl md:text-5xl font-black mt-2">주요 운영 기능</h2>
+        <!-- Chapter 4: Wrap-up & Platform -->
+        <section class="mb-12">
+            <div class="glass-card rounded-3xl p-8 bg-gradient-to-br from-gray-800 to-gray-900 text-white text-center shadow-xl">
+                <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-3xl mb-4">
+                                    </div>
+                <h2 class="text-2xl font-bold mb-4">자료 수집 5가지 꿀팁!</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✔️ 신뢰도 높은 자료 우선</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✔️ 양보다는 질</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✔️ 반드시 출처 표기</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✔️ 교차 검증 필수</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✔️ 최신 자료 사용</span>
+                </div>
+
+                <hr class="border-gray-700 mb-8">
+
+                <h3 class="text-xl font-bold mb-2 text-blue-300">경기도 청소년 참여 플랫폼 '청출어람'</h3>
+                <p class="text-gray-300 mb-6 text-sm">제안이유, 현황 및 문제점, 정책제안, 기대효과를 자세히 적어 여러분의 아이디어를 등록해보세요!</p>
+                <a href="#" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg shadow-blue-500/50 transition transform hover:-translate-y-1">
+                    지금 바로 정책 제안하러 가기 <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
             </div>
+        </section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg shadow-teal-100/50 border border-teal-50 hover:-translate-y-2 transition-transform">
-                    <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-2xl mb-6">📝</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">긍정기록 기능</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed break-keep">
-                        감사한 일, 좋았던 순간, 버틴 경험을 짧게 기록합니다. 악플 방지를 위해 <strong>댓글 없이 하트(공감)만 가능</strong>합니다.
-                    </p>
-                </div>
+    </main>
 
-                <!-- Feature 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg shadow-blue-100/50 border border-blue-50 hover:-translate-y-2 transition-transform">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🤝</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">고민공감 기능</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed break-keep">
-                        익명으로 고민을 나눕니다. 일반 이용자는 공감만 가능하며, 답변은 자격자만 할 수 있도록 구조화하여 안전을 확보합니다.
-                    </p>
-                </div>
+    <footer class="bg-white border-t py-8 text-center text-gray-500 text-sm">
+        <p class="mb-2">Copyright All Right Reserved by 경기도청소년활동진흥센터</p>
+        <p>이 자료는 저작권법에 따라 보호받는 저작물이므로 무단배포 및 무단복제를 금합니다.</p>
+    </footer>
 
-                <!-- Feature 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg shadow-rose-100/50 border border-rose-50 hover:-translate-y-2 transition-transform">
-                    <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🚨</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">위기 연계 기능</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed break-keep">
-                        상시 모니터링을 통해 자해, 폭력 등 위험 신호 감지 시 <strong>청소년상담복지센터 및 1388 등 기존 지원체계로 즉시 연계</strong>합니다.
-                    </p>
-                </div>
+    <script>
+        // Quiz Logic
+        function checkAnswer(selected) {
+            const buttons = document.querySelectorAll('#quiz-options button');
+            const resultBox = document.getElementById('quiz-result');
+            
+            buttons.forEach((btn, index) => {
+                btn.disabled = true;
+                if (index + 1 === 1) {
+                    btn.classList.replace('bg-white', 'bg-green-400');
+                    btn.classList.replace('text-blue-900', 'text-white');
+                } else {
+                    btn.classList.replace('bg-white', 'bg-gray-300');
+                    btn.classList.replace('text-blue-900', 'text-gray-500');
+                    if (index + 1 === selected && selected !== 1) {
+                        btn.classList.replace('bg-gray-300', 'bg-red-400');
+                        btn.classList.replace('text-gray-500', 'text-white');
+                    }
+                }
+            });
 
-                <!-- Feature 4 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg shadow-amber-100/50 border border-amber-50 hover:-translate-y-2 transition-transform">
-                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🎁</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">참여 보상 체계</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed break-keep">
-                        플랫폼 활성화를 위해 <strong>경기지역화폐와 연계</strong>한 보상을 도입합니다. 게시물 수보다 꾸준한 긍정기록 습관화에 초점을 맞춥니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+            resultBox.classList.remove('hidden');
+        }
 
-    <!-- 4. Effects Section -->
-    <section id="effects" class="section-full bg-white relative">
-        <div class="max-w-5xl mx-auto w-full px-6">
-            <div class="mb-16">
-                <span class="text-blue-600 font-black text-sm tracking-widest uppercase">Section 03. Expected Effects</span>
-                <h2 class="text-4xl md:text-5xl font-black mt-2">마음휴게소가 가져올 변화</h2>
-            </div>
+        // Active Navigation Link Highlight on Scroll
+        const sections = document.querySelectorAll("section[id]");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute("id");
+                }
+            });
 
-            <div class="space-y-6">
-                <div class="flex items-center gap-6 p-8 bg-gradient-to-r from-blue-50 to-transparent rounded-3xl border border-blue-100">
-                    <div class="text-4xl text-blue-500 bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm shrink-0">1</div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">정서적 안정감 형성</h4>
-                        <p class="text-gray-600 break-keep">위기 이전 단계에서 감정을 표현하고 긍정 경험을 돌아보는 기회를 제공하여 스스로 마음을 돌볼 수 있는 힘을 기릅니다.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-6 p-8 bg-gradient-to-r from-teal-50 to-transparent rounded-3xl border border-teal-100">
-                    <div class="text-4xl text-teal-500 bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm shrink-0">2</div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">정서적 고립감 완화</h4>
-                        <p class="text-gray-600 break-keep">또래 청소년들의 기록을 읽고 공감하는 과정을 통해 '나 혼자가 아니다'라는 연결감을 느끼게 합니다.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-6 p-8 bg-gradient-to-r from-rose-50 to-transparent rounded-3xl border border-rose-100">
-                    <div class="text-4xl text-rose-500 bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm shrink-0">3</div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">위험 조기 발견 및 예방</h4>
-                        <p class="text-gray-600 break-keep">위험 신호가 있는 청소년을 선제적으로 발견하여 경기도 청소년안전망으로 연결, 더 큰 위기를 막는 예방적 효과를 기대합니다.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="mt-24 border-t border-gray-100 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
-                <div>
-                    <h5 class="font-black text-2xl text-teal-600">건강안전분과</h5>
-                    <p class="text-gray-400 font-medium">마음휴게소(가칭) 운영 제안</p>
-                </div>
-                <button onclick="window.scrollTo(0,0)" class="text-sm font-bold text-gray-500 hover:text-teal-600 transition-colors flex items-center gap-2">
-                    TOP <i class="fa-solid fa-arrow-up"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bottom Indicator for Mobile -->
-    <div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-xl border border-gray-100 px-6 py-3 rounded-full shadow-2xl flex gap-4 text-[10px] font-black text-gray-400">
-        <a href="#hero" class="hover:text-teal-600">INTRO</a>
-        <a href="#background" class="hover:text-teal-600">BACKGROUND</a>
-        <a href="#solution" class="hover:text-teal-600">SOLUTION</a>
-        <a href="#effects" class="hover:text-teal-600">EFFECTS</a>
-    </div>
-
+            document.querySelectorAll("nav a").forEach((li) => {
+                li.classList.remove("active");
+                if (li.getAttribute("href").includes(current)) {
+                    li.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
