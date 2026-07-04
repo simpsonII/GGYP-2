@@ -26,6 +26,19 @@
             border-bottom: 2px solid #2563eb;
         }
         .hide { display: none; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -77,16 +90,39 @@
                 <i class="fa-solid fa-lightbulb text-yellow-300 text-3xl mr-4"></i>
                 <h2 class="text-2xl font-bold">워밍업 퀴즈 타임!</h2>
             </div>
-            <div id="quiz-container" class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                <p class="text-xl mb-6 font-medium">Q. 군포시 청소년 정책 담당 부서는 어디일까요?</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="quiz-options">
-                    <button onclick="checkAnswer(1)" class="bg-white text-blue-900 py-3 px-4 rounded-xl font-bold hover:bg-blue-50 transition shadow-sm">1. 도시주택국 건설과</button>
-                    <button onclick="checkAnswer(2)" class="bg-white text-blue-900 py-3 px-4 rounded-xl font-bold hover:bg-blue-50 transition shadow-sm">2. 복지국 아동청소년과</button>
-                    <button onclick="checkAnswer(3)" class="bg-white text-blue-900 py-3 px-4 rounded-xl font-bold hover:bg-blue-50 transition shadow-sm">3. 행정지원국 행정지원과</button>
+            <div id="quiz-container" class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                <div class="text-center mb-10">
+                    <p class="text-sm md:text-base font-bold text-blue-200 mb-2">아이스브레이킹 퀴즈</p>
+                    <p class="text-2xl md:text-4xl font-bold">군포시 청소년 정책 담당 부서는?</p>
                 </div>
-                <div id="quiz-result" class="hidden mt-6 text-center bg-white text-blue-900 p-4 rounded-xl animate-bounce">
-                    <span class="text-2xl font-black block mb-2">정답: 2번! 🎉</span>
-                    <p class="text-gray-700"><strong>복지국 아동청소년과 청소년팀</strong>에서 업무를 총괄합니다.
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="quiz-options">
+                    <button onclick="checkAnswer(1)" class="bg-white text-blue-900 py-10 px-4 rounded-3xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg flex flex-col items-center justify-center border-4 border-transparent group">
+                        <div class="bg-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">01</div>
+                        <div class="text-center text-lg leading-relaxed">도시주택국<br>건설과</div>
+                    </button>
+                    <button onclick="checkAnswer(2)" class="bg-white text-blue-900 py-10 px-4 rounded-3xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg flex flex-col items-center justify-center border-4 border-transparent group">
+                        <div class="bg-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">02</div>
+                        <div class="text-center text-lg leading-relaxed">사회복지국<br>아동청소년과</div>
+                    </button>
+                    <button onclick="checkAnswer(3)" class="bg-white text-blue-900 py-10 px-4 rounded-3xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg flex flex-col items-center justify-center border-4 border-transparent group">
+                        <div class="bg-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">03</div>
+                        <div class="text-center text-lg leading-relaxed">행정지원국<br>행정지원과</div>
+                    </button>
+                </div>
+
+                <div id="quiz-result" class="hidden mt-8 text-center bg-white text-blue-900 p-10 rounded-3xl animate-fade-in-up border-4 border-blue-400 shadow-2xl">
+                    <div class="text-blue-600 font-bold mb-2">아이스브레이킹 퀴즈</div>
+                    <span class="text-4xl font-black block mb-8 text-blue-900">정답</span>
+                    
+                    <div class="bg-blue-500 text-white rounded-full w-16 h-16 mx-auto flex items-center justify-center mb-6 text-2xl font-bold">02</div>
+                    
+                    <div class="text-gray-800 space-y-2 text-xl md:text-2xl">
+                        <p class="font-bold">복지국 아동청소년과</p>
+                        <p class="font-bold">청소년팀</p>
+                        <p class="mt-6 text-lg text-gray-600 pt-4">청소년팀 업무총괄</p>
+                        <p class="text-lg text-gray-600">청소년정책</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -398,18 +434,23 @@
         function checkAnswer(selected) {
             const buttons = document.querySelectorAll('#quiz-options button');
             const resultBox = document.getElementById('quiz-result');
+            const correctAnswer = 2;
             
             buttons.forEach((btn, index) => {
                 btn.disabled = true;
-                if (index + 1 === 1) {
-                    btn.classList.replace('bg-white', 'bg-green-400');
-                    btn.classList.replace('text-blue-900', 'text-white');
+                btn.classList.remove('hover:bg-blue-50');
+                
+                if (index + 1 === correctAnswer) {
+                    btn.classList.replace('bg-white', 'bg-green-100');
+                    btn.classList.replace('text-blue-900', 'text-green-900');
+                    btn.classList.replace('border-transparent', 'border-green-500');
                 } else {
-                    btn.classList.replace('bg-white', 'bg-gray-300');
-                    btn.classList.replace('text-blue-900', 'text-gray-500');
-                    if (index + 1 === selected && selected !== 1) {
-                        btn.classList.replace('bg-gray-300', 'bg-red-400');
-                        btn.classList.replace('text-gray-500', 'text-white');
+                    btn.classList.add('opacity-50');
+                    if (index + 1 === selected && selected !== correctAnswer) {
+                        btn.classList.replace('bg-white', 'bg-red-100');
+                        btn.classList.replace('text-blue-900', 'text-red-900');
+                        btn.classList.replace('border-transparent', 'border-red-500');
+                        btn.classList.remove('opacity-50');
                     }
                 }
             });
