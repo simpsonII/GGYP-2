@@ -93,21 +93,21 @@
             <div id="quiz-container" class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
                 <div class="text-center mb-10">
                     <p class="text-sm md:text-base font-bold text-blue-200 mb-2">아이스브레이킹 퀴즈</p>
-                    <p class="text-2xl md:text-4xl font-bold">군포시 청소년 정책 담당 부서는?</p>
+                    <p class="text-2xl md:text-4xl font-bold">남양주시 청소년 정책 담당 부서는?</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="quiz-options">
                     <button onclick="checkAnswer(1)" class="bg-white text-blue-900 py-10 px-4 rounded-3xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg flex flex-col items-center justify-center border-4 border-transparent group">
                         <div class="bg-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">01</div>
-                        <div class="text-center text-lg leading-relaxed">도시주택국<br>건설과</div>
+                        <div class="text-center text-lg leading-relaxed">문화교육국<br>미래교육과<br>청소년육성팀</div>
                     </button>
                     <button onclick="checkAnswer(2)" class="bg-white text-blue-900 py-10 px-4 rounded-3xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg flex flex-col items-center justify-center border-4 border-transparent group">
                         <div class="bg-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">02</div>
-                        <div class="text-center text-lg leading-relaxed">사회복지국<br>아동청소년과</div>
+                        <div class="text-center text-lg leading-relaxed">복지국<br>여성아동과<br>아동친화팀</div>
                     </button>
                     <button onclick="checkAnswer(3)" class="bg-white text-blue-900 py-10 px-4 rounded-3xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg flex flex-col items-center justify-center border-4 border-transparent group">
                         <div class="bg-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">03</div>
-                        <div class="text-center text-lg leading-relaxed">행정지원국<br>행정지원과</div>
+                        <div class="text-center text-lg leading-relaxed">문화교육국<br>미래교육과<br>청소년지원팀</div>
                     </button>
                 </div>
 
@@ -115,13 +115,12 @@
                     <div class="text-blue-600 font-bold mb-2">아이스브레이킹 퀴즈</div>
                     <span class="text-4xl font-black block mb-8 text-blue-900">정답</span>
                     
-                    <div class="bg-blue-500 text-white rounded-full w-16 h-16 mx-auto flex items-center justify-center mb-6 text-2xl font-bold">02</div>
+                    <div class="bg-blue-500 text-white rounded-full w-16 h-16 mx-auto flex items-center justify-center mb-6 text-2xl font-bold">01</div>
                     
                     <div class="text-gray-800 space-y-2 text-xl md:text-2xl">
-                        <p class="font-bold">복지국 아동청소년과</p>
-                        <p class="font-bold">청소년팀</p>
-                        <p class="mt-6 text-lg text-gray-600 pt-4">청소년팀 업무총괄</p>
-                        <p class="text-lg text-gray-600">청소년정책</p>
+                        <p class="font-bold">문화교육국 미래교육과</p>
+                        <p class="font-bold text-blue-600">청소년육성팀</p>
+                        <p class="mt-6 text-lg text-gray-600 pt-4">청소년정책 업무 총괄</p>
                     </div>
                 </div>
             </div>
@@ -434,7 +433,8 @@
         function checkAnswer(selected) {
             const buttons = document.querySelectorAll('#quiz-options button');
             const resultBox = document.getElementById('quiz-result');
-            const correctAnswer = 2;
+            // 정답 번호 업데이트 (남양주시 정답은 1번)
+            const correctAnswer = 1;
             
             buttons.forEach((btn, index) => {
                 btn.disabled = true;
